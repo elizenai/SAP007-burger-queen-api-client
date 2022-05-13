@@ -8,8 +8,8 @@ export const registerUser = (name, email, password, role) => {
     body:JSON.stringify({
       name: name,
       email: email,
-      password:password,
-      role:role,
+      password: password,
+      role: role,
       restaurant:"Queens Burger",
     })
   }); 
