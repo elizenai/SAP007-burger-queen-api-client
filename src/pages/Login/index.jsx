@@ -7,8 +7,7 @@ import { Layout } from "../../components/Layout";
 export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // const [name, setName] = useState(""); 
-    
+      
     return (
     <Layout>
       <Input
