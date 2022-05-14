@@ -5,13 +5,12 @@ export const Select = ({className, name, onChange, optionValues}) => {
         className={className}
         name={name}
         onChange={onChange}
+        defaultValue={optionValues[0].id}
       > 
         <option selected disabled>Selecione</option>   
         {optionValues.map((option,key) => {
           return( 
-            <option value={option.a} key= {key}>
-              {option.b}
-            </option>
+            <option value={option.id} key={key}> {option.title} </option>
           );
         })}
       </select>
