@@ -1,4 +1,18 @@
 .button {
-    height: 20px;
-    width: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+    height: 35px;
+    padding: 12px 17px;
+    border-radius: 8px;
+    background-color: rgb(189, 36, 25);
+    background-size: 200%;
+    color: rgb(226, 226, 226);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    border: 0;
 }
