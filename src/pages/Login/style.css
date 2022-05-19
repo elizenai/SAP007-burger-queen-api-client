@@ -26,6 +26,7 @@
   font-size: 15px;
   line-height: 19px;
   padding: 0.5rem 0;
+  color: #e8e7dc;
 }
 
 .label-password{
@@ -34,5 +35,15 @@
   line-height: 19px;
   padding: 0.5rem 0;
   padding-top: 15px;
+  color: #e8e7dc;
 }
 
+.select-style{
+  border-radius: 8px;
+  align-items: center;
+  border-bottom: 3px solid #ffc107;
+  font-size: 15px;
+  color: black;
+  height: 35px;
+  width: 138px;
+}

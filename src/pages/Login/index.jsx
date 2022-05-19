@@ -31,7 +31,6 @@ export const Login = () => {
         navigate(data.role === "saloon" ? "/saloon" : "/kitchen");
       })
       .catch((error) => console.log(error));
-    // mostrar o erro
   };
 
   return (
@@ -43,7 +42,7 @@ export const Login = () => {
         <h1 className="text-form"> Acesse sua conta </h1>
         <div className="container">
           <form className="form-container">
-            <Label className="textLabel">Email</Label>
+            <Label className="textLabel">Email:</Label>
             <Input
               placeholder="Digite seu email"
               type="email"
