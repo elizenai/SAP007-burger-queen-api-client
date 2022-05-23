@@ -45,7 +45,7 @@ export const Register = () => {
           <h1 className="text-form"> Cadastre-se </h1>
           <div className="container">
             <form className="form-container">
-              <Label className="textLabel">Nome:</Label>
+              <Label className="text-label">Nome:</Label>
               <Input
                 placeholder="Digite seu nome"
                 type="text"
