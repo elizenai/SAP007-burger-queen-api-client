@@ -1,0 +1,24 @@
+.product{
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-radius: 10px;
+  margin: 20px;
+  width: 170px;
+
+}
+
+.product-img{
+  border-radius: 10px;
+  height: 170px;
+  width: 170px;
+
+
+}
+.product-name{
+
+
+}
+.product-price{
+
+}
