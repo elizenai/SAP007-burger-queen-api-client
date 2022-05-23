@@ -1,3 +1,5 @@
+import { getToken } from "./token";
+
 export const registerUser = (name, email, password, role) => {
   return fetch("https://lab-api-bq.herokuapp.com/users", {
     method: "POST",
@@ -25,5 +27,14 @@ export const userLogin = (email, password) => {
       email:email,
       password:password,
     })  
+  });
+};
+
+const token = getToken();
+
+export const getMenu = () => {
+  return fetch("https://lab-api-bq.herokuapp.com/products",{
+    method:"GET",
+    headers:{ "Content-Type": "application/json", Authorization: token},
   });
 };
