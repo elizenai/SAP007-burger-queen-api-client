@@ -7,7 +7,7 @@ import { Select } from "../../components/Select";
 import { statusError } from "../../services/error";
 import { setToken } from "../../services/token";
 import { ErrorMessage } from "../../components/ErrorMessage";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Label } from "../../components/Label";
 import image from "../../img/logo-hamburger.png";
 import "../Login/style.css";
@@ -39,53 +39,56 @@ export const Register = () => {
   return (
     <Layout>
       <section className="all-content">
-          <figure>
-            <img src={image} alt="logo"/>
-          </figure>
-          <h1 className="text-form"> Cadastre-se </h1>
-          <div className="container">
-            <form className="form-container">
-              <Label className="text-label">Nome:</Label>
-              <Input
-                placeholder="Digite seu nome"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <Label className="textLabel">Email:</Label>
-              <Input
-                placeholder="Digite seu email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <Label className="label-password">Senha:</Label>
-              <Input
-                placeholder="*******"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <Select className= "select-style"
-                name={role}
-                optionValues={[
-                  { id: "selected", title: "selecione"},
-                  { id: "saloon", title: "salão" },
-                  { id: "kitchen", title: "cozinha" },
-                ]}
-                onChange={(e) => setRole(e.target.value)}
-              />
-              <Button
-                type="submit"
-                className="button"
-                btnText="Cadastrar"
-                onClick={handleSubmit}
-              />
-            </form>
+        <figure className="image-logo">
+          <img src={image} alt="logo" />
+        </figure>
+        <h1 className="text-form"> Cadastre-se </h1>
+        <div className="container">
+          <form className="form-container">
+            <Label className="text-label">Nome:</Label>
+            <Input className="text-input"
+              placeholder="Digite seu nome"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Label className="text-label">Email:</Label>
+            <Input className="text-input"
+              placeholder="Digite seu email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <Label className="label-password">Senha:</Label>
+            <Input className="text-input"
+              placeholder="*******"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <Select className="select-style"
+              name={role}
+              optionValues={[
+                { id: "selected", title: "selecione" },
+                { id: "saloon", title: "salão" },
+                { id: "kitchen", title: "cozinha" },
+              ]}
+              onChange={(e) => setRole(e.target.value)}
+            />
+            <Button
+              type="submit"
+              className="button"
+              btnText="Cadastrar"
+              onClick={handleSubmit}
+            />
             <ErrorMessage
-            disable={codeErro ? false : true}
-            message={codeErro}
-          />
+              disable={codeErro ? false : true}
+              message={codeErro}
+            />
+          </form>
+          <p className="text-paragraph">
+            Já possui conta? <Link className="text-link" to="/"> Acesse</Link>
+          </p>
         </div>
       </section>
     </Layout>

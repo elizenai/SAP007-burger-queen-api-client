@@ -1,0 +1,9 @@
+.text-input {
+  border-radius: 8px;
+  align-items: center;
+  border-bottom: 3px solid #ffc107;
+  font-size: 15px;
+  color: black;
+  height: 35px;
+  width: 140px;
+}
