@@ -1,3 +1,5 @@
+import "./style.css";
+
 export const Input = ({type, className, name, onChange, value, placeholder, minLength}) => {
     return (
     <input 

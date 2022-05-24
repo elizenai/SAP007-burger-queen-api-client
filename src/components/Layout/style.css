@@ -4,10 +4,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* .container {
+.container {
     width: 100%;
     margin: 0 auto;
-  } */
+  } 
   
   .container-login {
     margin: auto;
@@ -28,7 +28,7 @@
     border-radius: 10px;
     border: rgb(197, 206, 66) solid;
     /* overflow: hidden; */
-    padding: 77px 55px 33px 55px;
+    padding: 7px 55px 33px 55px;
     box-shadow: 10px 10px 10px 10px rgba(198, 201, 12, 0.2);
   }
   

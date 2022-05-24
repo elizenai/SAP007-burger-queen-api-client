@@ -21,7 +21,7 @@
   box-sizing: border-box;  
 }
 
-.textLabel {
+.text-label {
   font-weight: 400;
   font-size: 15px;
   line-height: 19px;
@@ -36,6 +36,7 @@
   padding: 0.5rem 0;
   padding-top: 15px;
   color: #e8e7dc;
+  border-radius: 8px;
 }
 
 .select-style{
@@ -46,4 +47,10 @@
   color: black;
   height: 35px;
   width: 138px;
+}
+
+.image-logo img{
+  width: 200px;
+  height: 170px;
+  margin-left: 30px;
 }
