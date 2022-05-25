@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { ProductCard } from "../../components/ProductCard";
 import { getMenu } from "../../services/api";
 import { Button } from "../../components/Button";
+import { Command } from "../../components/Command";
 
 
 export const Saloon = () => {
  const [products, setProducts] = useState([]);
+  const [command, setCommand] = useState([]);
   
  const filter = (data, type) =>  {
    return data.filter((item) => item.type === type);
@@ -24,19 +26,32 @@ export const Saloon = () => {
   const handleShowMenu = (e) => {
     showMenu(e.target.value);
   };
+
+  const handleAddProduct = (item) => {
+    console.log(item);
+    const newItem = {
+      id: item.id,
+      name: item.name,
+      price: item.price,
+    };
+    command.push(newItem);
+    setCommand([...command]);
+  };
+console.log(handleAddProduct);
+
   return (
   <>
     <div>
       <Button
         value="breakfast"
-        className="btnProducts"
+        className="btn-products"
         btnText="Café da Manhã"
         onClick={handleShowMenu}
       />
 
       <Button
         value="all-day"
-        className="btnProducts"
+        className="btn-products"
         btnText="Almoço/Jantar"
         onClick={handleShowMenu}
       />
@@ -49,7 +64,12 @@ export const Saloon = () => {
               image={item.image}
               name={item.name}
               price={item.price}
-            ></ProductCard>
+            />
+            <Button 
+              className="btn-add-item"
+              btnText=""
+              onClick=
+            />
           </div>
         );
       })}
