@@ -67,11 +67,17 @@ console.log(handleAddProduct);
             />
             <Button 
               className="btn-add-item"
-              btnText=""
-              onClick=
-            />
+              onClick={handleAddProduct}
+            >Adicionar</Button>
           </div>
         );
+      })}
+    </ul>
+    <ul>
+      {command.map((item) => {
+        return (
+          
+        )
       })}
     </ul>
   </>

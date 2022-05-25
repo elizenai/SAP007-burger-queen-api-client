@@ -1,5 +1,5 @@
 import "./style.css";
-export const Button = ({id, type, className, name, onClick, btnText, value}) => {
+export const Button = ({id, type, className, name, onClick, children, value}) => {
     return (
         <button
         id={id}
@@ -9,7 +9,7 @@ export const Button = ({id, type, className, name, onClick, btnText, value}) => 
         onClick={onClick}
         value={value}
         >
-         {btnText}
+         {children}
         </button>
     
     );
