@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 import { ProductCard } from "../../components/ProductCard";
 import { getMenu } from "../../services/api";
 import { Button } from "../../components/Button";
-import { Command } from "../../components/Command";
 
 
 export const Saloon = () => {
  const [products, setProducts] = useState([]);
-  const [command, setCommand] = useState([]);
   
  const filter = (data, type) =>  {
    return data.filter((item) => item.type === type);
@@ -27,34 +25,20 @@ export const Saloon = () => {
     showMenu(e.target.value);
   };
 
-  const handleAddProduct = (item) => {
-    console.log(item);
-    const newItem = {
-      id: item.id,
-      name: item.name,
-      price: item.price,
-    };
-    command.push(newItem);
-    setCommand([...command]);
-  };
-console.log(handleAddProduct);
-
   return (
   <>
     <div>
       <Button
         value="breakfast"
         className="btn-products"
-        btnText="Café da Manhã"
         onClick={handleShowMenu}
-      />
+      >Café da Manhã</Button>
 
       <Button
         value="all-day"
         className="btn-products"
-        btnText="Almoço/Jantar"
         onClick={handleShowMenu}
-      />
+      >Almoço e Jantar</Button>
     </div>
     <ul>
       {products.map((item) => {
@@ -64,20 +48,9 @@ console.log(handleAddProduct);
               image={item.image}
               name={item.name}
               price={item.price}
-            />
-            <Button 
-              className="btn-add-item"
-              onClick={handleAddProduct}
-            >Adicionar</Button>
+            ></ProductCard>
           </div>
         );
-      })}
-    </ul>
-    <ul>
-      {command.map((item) => {
-        return (
-          
-        )
       })}
     </ul>
   </>
