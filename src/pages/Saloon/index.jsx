@@ -24,22 +24,21 @@ export const Saloon = () => {
   const handleShowMenu = (e) => {
     showMenu(e.target.value);
   };
+
   return (
   <>
     <div>
       <Button
         value="breakfast"
-        className="btnProducts"
-        btnText="Café da Manhã"
+        className="btn-products"
         onClick={handleShowMenu}
-      />
+      >Café da Manhã</Button>
 
       <Button
         value="all-day"
-        className="btnProducts"
-        btnText="Almoço/Jantar"
+        className="btn-products"
         onClick={handleShowMenu}
-      />
+      >Almoço e Jantar</Button>
     </div>
     <ul>
       {products.map((item) => {

@@ -78,9 +78,8 @@ export const Register = () => {
             <Button
               type="submit"
               className="button"
-              btnText="Cadastrar"
               onClick={handleSubmit}
-            />
+            >Cadastrar</Button>
             <ErrorMessage
               disable={codeErro ? false : true}
               message={codeErro}

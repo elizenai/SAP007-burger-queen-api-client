@@ -57,7 +57,7 @@ export const Login = () => {
               minLength="6"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button className="button" btnText="Entrar" onClick={handleClick} />
+            <Button className="button" onClick={handleClick}>Entrar</Button>
             <ErrorMessage
               disable={codeErro ? false : true}
               message={codeErro}
