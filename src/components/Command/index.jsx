@@ -1,11 +1,10 @@
-export const Command = ({ id, name, price, quantity }) => {
+export const Command = ({ id, name, price, qtd }) => {
   return (
-    <p
-      id={id}
-      name={name}
-      price={price}
-      quantity={quantity}
-    >
+    <p>
+      {id}
+      {name}
+      {price}
+      {qtd}
     </p>
   );
 };

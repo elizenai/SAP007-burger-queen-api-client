@@ -6,6 +6,7 @@ import { Button } from "../../components/Button";
 
 export const Saloon = () => {
  const [products, setProducts] = useState([]);
+ const [orderProducts, setOrderProducts] = useState([]);
   
  const filter = (data, type) =>  {
    return data.filter((item) => item.type === type);
@@ -21,9 +22,23 @@ export const Saloon = () => {
     showMenu("breakfast");
   }, []);
 
+  
   const handleShowMenu = (e) => {
     showMenu(e.target.value);
   };
+  
+  const handleOrders = (item) => {
+    const product = {...item, qtd: 1};
+    let newOrderProducts = orderProducts;
+    console.log(orderProducts);
+    newOrderProducts.push(product);
+    setOrderProducts(newOrderProducts);
+    // console.log(orderProducts, "itemmm");
+  };
+  
+  useEffect(() => {
+    console.log(orderProducts, "ORDER PRODUCT");
+  }, [orderProducts]);
 
   return (
   <>
@@ -43,16 +58,31 @@ export const Saloon = () => {
     <ul>
       {products.map((item) => {
         return (
-          <div key={item.id}>
-            <ProductCard
-              image={item.image}
-              name={item.name}
-              price={item.price}
-            ></ProductCard>
-          </div>
+          
+          <ProductCard 
+            key={item.id}
+            image={item.image}
+            name={item.name}
+            price={item.price}
+            onClick={() => handleOrders(item)}
+          ></ProductCard>
+      
         );
       })}
     </ul>
+    <h2>pedido</h2>
+    <ul>
+      {orderProducts.map((item) => {
+
+        return (
+          <p key={item.id}>
+            {item.name} : {item.qtd}
+          </p>
+        );
+
+      })}
+    </ul>
+    
   </>
   );
 };
