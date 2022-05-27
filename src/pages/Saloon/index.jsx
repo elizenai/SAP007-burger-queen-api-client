@@ -28,12 +28,16 @@ export const Saloon = () => {
   };
   
   const handleOrders = (item) => {
-    const product = {...item, qtd: 1};
-    let newOrderProducts = orderProducts;
-    console.log(orderProducts);
-    newOrderProducts.push(product);
+    const verifyIdProduct = orderProducts.find((itemOrder) => itemOrder.id === item.id); 
+    let newOrderProducts = [...orderProducts];
+    if (verifyIdProduct){
+      verifyIdProduct.qtd ++;
+    } else {
+      const product = {...item, qtd: 1};
+      newOrderProducts.push(product);
+    }
     setOrderProducts(newOrderProducts);
-    // console.log(orderProducts, "itemmm");
+    
   };
   
   useEffect(() => {
@@ -75,7 +79,7 @@ export const Saloon = () => {
       {orderProducts.map((item) => {
 
         return (
-          <p key={item.id}>
+          <p key={`Product${item.id}`}>
             {item.name} : {item.qtd}
           </p>
         );
