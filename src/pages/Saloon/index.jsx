@@ -6,6 +6,7 @@ import { Button } from "../../components/Button";
 
 export const Saloon = () => {
  const [products, setProducts] = useState([]);
+ const [orderProducts, setOrderProducts] = useState([]);
   
  const filter = (data, type) =>  {
    return data.filter((item) => item.type === type);
@@ -21,39 +22,85 @@ export const Saloon = () => {
     showMenu("breakfast");
   }, []);
 
+  
   const handleShowMenu = (e) => {
     showMenu(e.target.value);
   };
+  
+  const handleAddOrders = (item) => {
+    const verifyIdProduct = orderProducts.find((itemOrder) => itemOrder.id === item.id); 
+    let newOrderProducts = [...orderProducts];
+    if (verifyIdProduct){
+      verifyIdProduct.qtd ++;
+      console.log(newOrderProducts, "estou no if");
+    } else {
+      const product = {...item, qtd: 1};
+      console.log("entrei no else");
+      newOrderProducts.push(product);
+    }
+    setOrderProducts(newOrderProducts); 
+  };
+
+  // const handleRemoveOrders = (item) => {
+  //   const verifyIdProduct = orderProducts.find((itemOrder) => itemOrder.id === item.id);
+  //   let newOrderProducts = [...orderProducts];
+  //   if (verifyIdProduct) {
+  //     verifyIdProduct.qtd--;
+  //   } else {
+  //     newOrderProducts = newOrderProducts.filter((itemOrder) => itemOrder.id != item.id);
+      
+  //   }
+  //   setOrderProducts(newOrderProducts);
+  // };
+  
+  
+  useEffect(() => {
+    console.log(orderProducts, "ORDER PRODUCT");
+  }, [orderProducts]);
+
   return (
   <>
     <div>
       <Button
         value="breakfast"
-        className="btnProducts"
-        btnText="Café da Manhã"
+        className="btn-products"
         onClick={handleShowMenu}
-      />
+      >Café da Manhã</Button>
 
       <Button
         value="all-day"
-        className="btnProducts"
-        btnText="Almoço/Jantar"
+        className="btn-products"
         onClick={handleShowMenu}
-      />
+      >Almoço e Jantar</Button>
     </div>
     <ul>
       {products.map((item) => {
         return (
-          <div key={item.id}>
-            <ProductCard
-              image={item.image}
-              name={item.name}
-              price={item.price}
-            ></ProductCard>
-          </div>
+          
+          <ProductCard 
+            key={item.id}
+            image={item.image}
+            name={item.name}
+            price={item.price}
+            onClick={() => handleAddOrders(item)}
+          ></ProductCard>
+      
         );
       })}
     </ul>
+    <h2>pedido</h2>
+    <ul>
+      {orderProducts.map((item) => {
+
+        return (
+          <p key={`Product${item.id}`}>
+            {item.name} : {item.qtd}
+          </p>
+        );
+
+      })}
+    </ul>
+    
   </>
   );
 };
