@@ -27,14 +27,32 @@ export const Saloon = () => {
     showMenu(e.target.value);
   };
   
-  const handleOrders = (item) => {
-    const product = {...item, qtd: 1};
-    let newOrderProducts = orderProducts;
-    console.log(orderProducts);
-    newOrderProducts.push(product);
-    setOrderProducts(newOrderProducts);
-    // console.log(orderProducts, "itemmm");
+  const handleAddOrders = (item) => {
+    const verifyIdProduct = orderProducts.find((itemOrder) => itemOrder.id === item.id); 
+    let newOrderProducts = [...orderProducts];
+    if (verifyIdProduct){
+      verifyIdProduct.qtd ++;
+      console.log(newOrderProducts, "estou no if");
+    } else {
+      const product = {...item, qtd: 1};
+      console.log("entrei no else");
+      newOrderProducts.push(product);
+    }
+    setOrderProducts(newOrderProducts); 
   };
+
+  // const handleRemoveOrders = (item) => {
+  //   const verifyIdProduct = orderProducts.find((itemOrder) => itemOrder.id === item.id);
+  //   let newOrderProducts = [...orderProducts];
+  //   if (verifyIdProduct) {
+  //     verifyIdProduct.qtd--;
+  //   } else {
+  //     newOrderProducts = newOrderProducts.filter((itemOrder) => itemOrder.id != item.id);
+      
+  //   }
+  //   setOrderProducts(newOrderProducts);
+  // };
+  
   
   useEffect(() => {
     console.log(orderProducts, "ORDER PRODUCT");
@@ -64,7 +82,7 @@ export const Saloon = () => {
             image={item.image}
             name={item.name}
             price={item.price}
-            onClick={() => handleOrders(item)}
+            onClick={() => handleAddOrders(item)}
           ></ProductCard>
       
         );
@@ -75,7 +93,7 @@ export const Saloon = () => {
       {orderProducts.map((item) => {
 
         return (
-          <p key={item.id}>
+          <p key={`Product${item.id}`}>
             {item.name} : {item.qtd}
           </p>
         );
