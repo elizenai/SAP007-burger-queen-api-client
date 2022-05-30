@@ -1,12 +1,13 @@
+/* eslint-disable no-undef */
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import Button from "./";
+import {Button} from "../components/Button";
 
 describe("Button Component", () => {
   
   it("Render a button correctly", () => {
-    render(<Button />);
-    const btn = screen.getByRole("btnText", { name: /Entrar/i });
+    render(<Button>Entrar</Button>);
+    const btn = screen.getByText("Entrar");
     expect(btn).toBeInTheDocument();
   });
 });
