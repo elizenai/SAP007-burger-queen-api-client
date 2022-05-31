@@ -11,6 +11,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { Label } from "../../components/Label";
 import image from "../../img/logo-hamburger.png";
 import "../Login/style.css";
+import "./style.css";
 
 export const Register = () => {
   const [name, setName] = useState("");
