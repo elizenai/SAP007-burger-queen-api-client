@@ -97,6 +97,7 @@ export const Saloon = () => {
         <aside className="order-all-day order-breakfast">
           <h2 className="order-command">Pedido:</h2>
           <ul>
+
             <div>
               <Input  
               className= "client-name"
@@ -104,6 +105,7 @@ export const Saloon = () => {
 
               {/* <Select/> */}
             </div>
+            
             {orderProducts.map((item) => {
 
               return (
