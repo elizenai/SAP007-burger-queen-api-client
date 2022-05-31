@@ -62,10 +62,11 @@ export const Login = () => {
               disable={codeErro ? false : true}
               message={codeErro}
             />
+            <p className="text-paragraph">
+              Não possui cadastro? <Link className="text-link" to="/register"> Clique aqui</Link>
+            </p>
           </form>
-          <p className="text-paragraph">
-            Não possui cadastro? <Link className="text-link" to="/register"> Clique aqui</Link>
-          </p>
+          
         </div>
       </section>
     </Layout>
