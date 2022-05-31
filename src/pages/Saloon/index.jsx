@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { ProductCard } from "../../components/ProductCard";
 import { getMenu } from "../../services/api";
 import { Button } from "../../components/Button";
-
+import "./style.css";
+import { Input } from "../../components/Input";
+import { Command } from "../../components/Command";
 
 export const Saloon = () => {
  const [products, setProducts] = useState([]);
@@ -41,17 +43,17 @@ export const Saloon = () => {
     setOrderProducts(newOrderProducts); 
   };
 
-  // const handleRemoveOrders = (item) => {
-  //   const verifyIdProduct = orderProducts.find((itemOrder) => itemOrder.id === item.id);
-  //   let newOrderProducts = [...orderProducts];
-  //   if (verifyIdProduct) {
-  //     verifyIdProduct.qtd--;
-  //   } else {
-  //     newOrderProducts = newOrderProducts.filter((itemOrder) => itemOrder.id != item.id);
+  const handleRemoveOrders = (item) => {
+    const verifyIdProduct = orderProducts.find((itemOrder) => itemOrder.id === item.id);
+    let newOrderProducts = [...orderProducts];
+    if (verifyIdProduct.qtd > 1) {
+      verifyIdProduct.qtd -= 1;
+    } else {
+      newOrderProducts = newOrderProducts.filter((itemOrder) => itemOrder.id != item.id);
       
-  //   }
-  //   setOrderProducts(newOrderProducts);
-  // };
+    }
+    setOrderProducts(newOrderProducts);
+  };
   
   
   useEffect(() => {
@@ -60,47 +62,69 @@ export const Saloon = () => {
 
   return (
   <>
-    <div>
-      <Button
-        value="breakfast"
-        className="btn-products"
-        onClick={handleShowMenu}
-      >Café da Manhã</Button>
+    <section className="container-saloon">
+      <div className="buttons">
+        <Button
+          value="breakfast"
+          className="btn-products"
+          onClick={handleShowMenu}
+        >Café da Manhã</Button>
 
-      <Button
-        value="all-day"
-        className="btn-products"
-        onClick={handleShowMenu}
-      >Almoço e Jantar</Button>
-    </div>
-    <ul>
-      {products.map((item) => {
-        return (
+        <Button
+          value="all-day"
+          className="btn-products"
+          onClick={handleShowMenu}
+        >Almoço e Jantar</Button>
+      </div>  
+      <div className="container-products">
+        <ul className="all-products">
+          {products.map((item) => {
+            return (
+              
+              <ProductCard 
+                key={item.id}
+                image={item.image}
+                name={item.name}
+                price={item.price}
+                onClick={() => handleAddOrders(item)}
+              ></ProductCard>
           
-          <ProductCard 
-            key={item.id}
-            image={item.image}
-            name={item.name}
-            price={item.price}
-            onClick={() => handleAddOrders(item)}
-          ></ProductCard>
-      
-        );
-      })}
-    </ul>
-    <h2>pedido</h2>
-    <ul>
-      {orderProducts.map((item) => {
+            );
+          })}
+        </ul>
+        <div>
+          <Input  
+          className= "client-name"
+          placeholder= "nome do cliente"/>
 
-        return (
-          <p key={`Product${item.id}`}>
-            {item.name} : {item.qtd}
-          </p>
-        );
+          {/* <Select/> */}
+        </div>
+        
+        <aside className="order-all-day order-breakfast">
+          <h2 className="order-command">Pedido:</h2>
+          <ul>
+            {orderProducts.map((item) => {
 
-      })}
-    </ul>
-    
+              return (
+                <li className="command-itens"key={`Product${item.id}`}>
+                 <Command
+                  name={item.name} 
+                  qtd={item.qtd}
+                  price={item.price * item.qtd}
+                 />
+                 <Button 
+                    className="btn-remove"
+                    onClick={() => handleRemoveOrders(item)}>
+                   remover
+                 </Button>
+                </li>
+              );
+
+            })}
+          </ul>
+        </aside>
+      </div>
+    </section>
   </>
   );
 };
