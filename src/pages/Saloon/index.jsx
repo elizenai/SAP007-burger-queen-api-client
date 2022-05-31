@@ -92,17 +92,18 @@ export const Saloon = () => {
             );
           })}
         </ul>
-        <div>
-          <Input  
-          className= "client-name"
-          placeholder= "nome do cliente"/>
-
-          {/* <Select/> */}
-        </div>
+        
         
         <aside className="order-all-day order-breakfast">
           <h2 className="order-command">Pedido:</h2>
           <ul>
+            <div>
+              <Input  
+              className= "client-name"
+              placeholder= "nome do cliente"/>
+
+              {/* <Select/> */}
+            </div>
             {orderProducts.map((item) => {
 
               return (
