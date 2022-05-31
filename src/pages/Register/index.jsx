@@ -84,10 +84,10 @@ export const Register = () => {
               disable={codeErro ? false : true}
               message={codeErro}
             />
+            <p className="text-paragraph">
+              Já possui conta? <Link className="text-link" to="/"> Acesse</Link>
+            </p>
           </form>
-          <p className="text-paragraph">
-            Já possui conta? <Link className="text-link" to="/"> Acesse</Link>
-          </p>
         </div>
       </section>
     </Layout>
