@@ -1,11 +1,11 @@
 import "./style.css";
 
-export const Layout = (props) => {
+export const Layout = ({children}) => {
     return (
             <section className="container">
                 <div className="container-login">
                     <div className="wrap-login">
-                    {props.children}
+                    {children}
                     </div>
                 </div>
             </section>
