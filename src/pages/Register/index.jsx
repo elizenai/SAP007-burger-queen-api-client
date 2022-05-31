@@ -46,36 +46,38 @@ export const Register = () => {
         <h1 className="text-form"> Cadastre-se </h1>
         <div className="container">
           <form className="form-container">
-            <Label className="text-label">Nome:</Label>
-            <Input className="text-input"
+            <Label className="text-label-register">Nome:</Label>
+            <Input className="text-input-register"
               placeholder="Digite seu nome"
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-            <Label className="text-label">Email:</Label>
-            <Input className="text-input"
+            <Label className="text-label-register">Email:</Label>
+            <Input className="text-input-register"
               placeholder="Digite seu email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <Label className="label-password">Senha:</Label>
-            <Input className="text-input"
-              placeholder="*******"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <Select className="select-style"
-              name={role}
-              optionValues={[
-                { id: "selected", title: "selecione" },
-                { id: "saloon", title: "salão" },
-                { id: "kitchen", title: "cozinha" },
-              ]}
-              onChange={(e) => setRole(e.target.value)}
-            />
+            <Label className="label-password-register">Senha:</Label>
+            <div className="container-input-select">
+              <Input className="input-password-register"
+                placeholder="*******"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <Select className="select-style"
+                name={role}
+                optionValues={[
+                  { id: "selected", title: "selecione" },
+                  { id: "saloon", title: "salão" },
+                  { id: "kitchen", title: "cozinha" },
+                ]}
+                onChange={(e) => setRole(e.target.value)}
+              />
+            </div>
             <Button
               type="submit"
               className="button"
@@ -85,7 +87,7 @@ export const Register = () => {
               disable={codeErro ? false : true}
               message={codeErro}
             />
-            <p className="text-paragraph">
+            <p className="text-paragraph-register">
               Já possui conta? <Link className="text-link" to="/"> Acesse</Link>
             </p>
           </form>

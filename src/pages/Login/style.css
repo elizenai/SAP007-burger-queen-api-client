@@ -10,7 +10,7 @@
   font-size: 16px;
   line-height: 20px;
   color: #FFBC0D;
-}
+  }
 
 .form-container{
   display: flex;
@@ -59,7 +59,7 @@
 
 .text-paragraph {
   color: white;
-
+  margin-top: 25px;
 }
 
 .text-link{

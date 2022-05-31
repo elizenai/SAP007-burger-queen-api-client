@@ -63,20 +63,20 @@ export const Saloon = () => {
   return (
   <>
     <section className="container-saloon">
-      <div className="buttons">
-        <Button
-          value="breakfast"
-          className="btn-products"
-          onClick={handleShowMenu}
-        >Café da Manhã</Button>
-
-        <Button
-          value="all-day"
-          className="btn-products"
-          onClick={handleShowMenu}
-        >Almoço e Jantar</Button>
-      </div>  
       <div className="container-products">
+        <div className="buttons">
+          <Button
+            value="breakfast"
+            className="btn-products"
+            onClick={handleShowMenu}
+          >Café da Manhã</Button>
+
+          <Button
+            value="all-day"
+            className="btn-products"
+            onClick={handleShowMenu}
+          >Almoço e Jantar</Button>
+        </div>  
         <ul className="all-products">
           {products.map((item) => {
             return (
@@ -92,9 +92,10 @@ export const Saloon = () => {
             );
           })}
         </ul>
-        
-        
-        <aside className="order-all-day order-breakfast">
+      </div> 
+
+      <aside className="order">
+        <div className="products-command">
           <h2 className="order-command">Pedido:</h2>
           <ul>
 
@@ -105,28 +106,28 @@ export const Saloon = () => {
 
               {/* <Select/> */}
             </div>
-            
+              
             {orderProducts.map((item) => {
 
               return (
                 <li className="command-itens"key={`Product${item.id}`}>
-                 <Command
+                  <Command
                   name={item.name} 
                   qtd={item.qtd}
                   price={item.price * item.qtd}
-                 />
-                 <Button 
+                  />
+                  <Button 
                     className="btn-remove"
                     onClick={() => handleRemoveOrders(item)}>
-                   remover
-                 </Button>
+                    remover
+                  </Button>
                 </li>
               );
 
             })}
           </ul>
-        </aside>
-      </div>
+        </div>
+      </aside>
     </section>
   </>
   );
