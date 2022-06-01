@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./style.css";
 import { Button } from "../../components/Button";
+import { Footer } from "../../components/Footer";
 import { Input } from "../../components/Input";
 import { Layout } from "../../components/Layout";
 import { userLogin } from "../../services/api";
@@ -10,6 +11,7 @@ import { statusError } from "../../services/error";
 import { setToken } from "../../services/token";
 import { ErrorMessage } from "../../components/ErrorMessage";
 import { useNavigate, Link } from "react-router-dom";
+
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -66,9 +68,11 @@ export const Login = () => {
               Não possui cadastro? <Link className="text-link" to="/register"> Clique aqui</Link>
             </p>
           </form>
-          
         </div>
       </section>
+        <Footer className="footer">Desenvolvido por Elizenai Silva
+          e Gabriela Medrado
+        </Footer>
     </Layout>
   );
 };
