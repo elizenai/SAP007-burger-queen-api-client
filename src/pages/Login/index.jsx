@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./style.css";
 import { Button } from "../../components/Button";
-import { Footer } from "../../components/Footer";
 import { Input } from "../../components/Input";
 import { Layout } from "../../components/Layout";
 import { userLogin } from "../../services/api";
@@ -70,9 +69,6 @@ export const Login = () => {
           </form>
         </div>
       </section>
-        <Footer className="footer">Desenvolvido por Elizenai Silva
-          e Gabriela Medrado
-        </Footer>
     </Layout>
   );
 };
