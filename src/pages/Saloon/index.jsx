@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react";
 import { ProductCard } from "../../components/ProductCard";
-import { getMenu } from "../../services/api";
+import { createOrder, getMenu } from "../../services/api";
 import { Button } from "../../components/Button";
 import "./style.css";
 import { Input } from "../../components/Input";
 import { Command } from "../../components/Command";
+import { Select } from "../../components/Select";
 
 export const Saloon = () => {
  const [products, setProducts] = useState([]);
  const [orderProducts, setOrderProducts] = useState([]);
-  
+ const [chooseTable, setChooseTable] = useState("");
+ const [nameClient, setNameClient] = useState("");
+ const [saveOrder, setSaveOrder] = useState([]);
+   
  const filter = (data, type) =>  {
    return data.filter((item) => item.type === type);
  };
@@ -55,7 +59,15 @@ export const Saloon = () => {
     setOrderProducts(newOrderProducts);
   };
   
-  
+  const handleSubmitOrder = () => {
+    createOrder(nameClient, chooseTable, orderProducts)
+      .then((response) => response.json())
+      .then((data) => {setSaveOrder(data);
+        console.log(data,"Pedido");
+      });
+      console.log([saveOrder],"PEdidooo");
+  };
+
   useEffect(() => {
     console.log(orderProducts, "ORDER PRODUCT");
   }, [orderProducts]);
@@ -100,21 +112,38 @@ export const Saloon = () => {
           <ul>
 
             <div>
-              <Input  
-              className= "client-name"
-              placeholder= "nome do cliente"/>
-
-              {/* <Select/> */}
-            </div>
-              
+              <li>
+                <Input  
+                  className= "client-name"
+                  placeholder= "nome do cliente"
+                  value={nameClient}
+                  onChange={(e) => setNameClient(e.target.value)}
+                  />
+              </li>
+              <li>
+                <Select
+                  className="select-table"
+                  value={chooseTable}
+                  onChange={(e) => setChooseTable(e.target.value)}
+                  optionValues={[
+                    { id: "selected", title: "Mesa" },
+                    { title: "1" },
+                    { title: "2" },
+                    { title: "3" },
+                    { title: "4" },
+                    { title: "5" },
+                  ]}
+                /> 
+              </li>
+            </div> 
             {orderProducts.map((item) => {
 
               return (
                 <li className="command-itens"key={`Product${item.id}`}>
                   <Command
-                  name={item.name} 
-                  qtd={item.qtd}
-                  price={item.price * item.qtd}
+                    name={item.name} 
+                    qtd={item.qtd}
+                    price={item.price * item.qtd}
                   />
                   <Button 
                     className="btn-remove"
@@ -126,6 +155,9 @@ export const Saloon = () => {
 
             })}
           </ul>
+          <Button
+              onClick={handleSubmitOrder}
+          >Enviar Pedido</Button>
         </div>
       </aside>
     </section>

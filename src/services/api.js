@@ -38,3 +38,15 @@ export const getMenu = () => {
     headers:{ "Content-Type": "application/json", Authorization: token},
   });
 };
+
+export const createOrder = (client, table, products) => {
+  return fetch("https://lab-api-bq.herokuapp.com/orders",{
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: token },
+    body: JSON.stringify({
+    client: client,
+    table: table,
+    products: products,
+    })
+  });
+};
