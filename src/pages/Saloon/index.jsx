@@ -105,6 +105,8 @@ export const Saloon = () => {
                 key={item.id}
                 image={item.image}
                 name={item.name}
+                flavor={item.flavor}
+                complement={item.complement}
                 price={item.price}
                 onClick={() => handleAddOrders(item)}
               ></ProductCard>
@@ -151,6 +153,8 @@ export const Saloon = () => {
                   <Command
                     name={item.name} 
                     qtd={item.qtd}
+                    flavor={item.flavor}
+                    complement={item.complement}
                     price={item.price * item.qtd}
                   />
                   <Button 
