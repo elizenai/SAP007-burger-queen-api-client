@@ -75,3 +75,15 @@ body{
 li{
   list-style-type: none;
 }
+
+.total-order{
+  color: white;
+}
+.order-completion{
+  position: fixed;
+  display: flex;
+  bottom: 180px;
+}
+/* .btn-send-order{
+  
+} */

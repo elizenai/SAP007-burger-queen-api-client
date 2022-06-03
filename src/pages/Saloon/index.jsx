@@ -13,6 +13,7 @@ export const Saloon = () => {
  const [chooseTable, setChooseTable] = useState("");
  const [nameClient, setNameClient] = useState("");
  const [saveOrder, setSaveOrder] = useState([]);
+ const [sumOrders, setSumOrders] = useState(0);
    
  const filter = (data, type) =>  {
    return data.filter((item) => item.type === type);
@@ -71,6 +72,13 @@ export const Saloon = () => {
   useEffect(() => {
     console.log(orderProducts, "ORDER PRODUCT");
   }, [orderProducts]);
+
+  useEffect(() => {
+    const amount = orderProducts.reduce((previousPrice, item) => {
+    return previousPrice + item.qtd * item.price;
+    },0);
+    setSumOrders(amount);
+  },[orderProducts]);
 
   return (
   <>
@@ -155,9 +163,18 @@ export const Saloon = () => {
 
             })}
           </ul>
-          <Button
-              onClick={handleSubmitOrder}
-          >Enviar Pedido</Button>
+          <div className="order-completion">
+            <p className="total-order">
+             Valor Total: R${sumOrders},00
+            </p> 
+
+            <Button
+              className="btn-send-order"
+              onClick={handleSubmitOrder}>
+              Enviar Pedido
+            </Button>
+          </div>
+          
         </div>
       </aside>
     </section>
