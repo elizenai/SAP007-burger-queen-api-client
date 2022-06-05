@@ -6,6 +6,8 @@ import "./style.css";
 import { Input } from "../../components/Input";
 import { Command } from "../../components/Command";
 import { Select } from "../../components/Select";
+// import { useNavigate } from "react-router-dom";
+// import { getToken, removeToken } from "../../services/token";
 
 export const Saloon = () => {
  const [products, setProducts] = useState([]);
@@ -69,6 +71,14 @@ export const Saloon = () => {
       console.log([saveOrder],"PEdidooo");
   };
 
+  // const handleLogout = () => {
+  //   if (getToken) {
+  //     removeToken();
+  //     return useNavigate("/");
+  //   }
+  // };
+
+
   useEffect(() => {
     console.log(orderProducts, "ORDER PRODUCT");
   }, [orderProducts]);
@@ -96,6 +106,13 @@ export const Saloon = () => {
             className="btn-products"
             onClick={handleShowMenu}
           >Almoço e Jantar</Button>
+        </div>
+
+        <div className="btn-logout">
+          <Button
+          className="btn-exit"
+          // onClick={handleLogout}
+          >Sair</Button>
         </div>  
         <ul className="all-products">
           {products.map((item) => {
