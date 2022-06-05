@@ -6,8 +6,11 @@ import "./style.css";
 import { Input } from "../../components/Input";
 import { Command } from "../../components/Command";
 import { Select } from "../../components/Select";
-// import { useNavigate } from "react-router-dom";
-// import { getToken, removeToken } from "../../services/token";
+import { useNavigate } from "react-router-dom";
+import { removeToken } from "../../services/token";
+import { Header } from "../../components/Header";
+import { filterProducts } from "../../services/filter";
+
 
 export const Saloon = () => {
  const [products, setProducts] = useState([]);
@@ -16,22 +19,19 @@ export const Saloon = () => {
  const [nameClient, setNameClient] = useState("");
  const [saveOrder, setSaveOrder] = useState([]);
  const [sumOrders, setSumOrders] = useState(0);
-   
- const filter = (data, type) =>  {
-   return data.filter((item) => item.type === type);
- };
+ const navigate = useNavigate();
+
+ const handleLogout = () => {
+    removeToken();
+    navigate("/");
+  };
 
   const showMenu = (option) => {
     getMenu()
       .then((response) => response.json())
-      .then((data) => setProducts(filter(data, option)));    
+      .then((data) => setProducts(filterProducts(data, option)));    
   };
 
-  useEffect(() => {
-    showMenu("breakfast");
-  }, []);
-
-  
   const handleShowMenu = (e) => {
     showMenu(e.target.value);
   };
@@ -71,13 +71,9 @@ export const Saloon = () => {
       console.log([saveOrder],"PEdidooo");
   };
 
-  // const handleLogout = () => {
-  //   if (getToken) {
-  //     removeToken();
-  //     return useNavigate("/");
-  //   }
-  // };
-
+  useEffect(() => {
+    showMenu("breakfast");
+  }, []);
 
   useEffect(() => {
     console.log(orderProducts, "ORDER PRODUCT");
@@ -93,6 +89,9 @@ export const Saloon = () => {
   return (
   <>
     <section className="container-saloon">
+      <div className="btn-logout">
+        <Header onClick={handleLogout}></Header>
+      </div>
       <div className="container-products">
         <div className="buttons">
           <Button
@@ -108,12 +107,7 @@ export const Saloon = () => {
           >Almoço e Jantar</Button>
         </div>
 
-        <div className="btn-logout">
-          <Button
-          className="btn-exit"
-          // onClick={handleLogout}
-          >Sair</Button>
-        </div>  
+          
         <ul className="all-products">
           {products.map((item) => {
             return (
