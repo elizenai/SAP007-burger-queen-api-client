@@ -3,25 +3,12 @@ body{
   width: 100%;
 }
 
-.btn-products{
-  border-radius: 3px;
-
-}
-
-.btn-add-product{
-  border-radius: 6px;
-  width: 100px;
-  height: 30px;
-  background-color: #FFBC0D;
-  font-size: 17px;
-  border: 0px;
-}
-
 .container-saloon{
   display:flex;
   width: 100vw;
   min-height: 100vh;
 } 
+
 .container-products{
   width: 70%;
   display: flex;
@@ -37,7 +24,6 @@ body{
   width: 80%;
   margin: 0 auto;
   gap:10px;
-  
 }
 
 .order{
@@ -62,14 +48,12 @@ body{
 .order-command{
   color: #FFBC0D;
   padding: 10px;
-
 }
 
 .command-itens{
   color: white;
   padding: 10px;
-  text-align: left;
-  
+  text-align: left; 
 }
 
 li{
@@ -79,11 +63,9 @@ li{
 .total-order{
   color: white;
 }
+
 .order-completion{
   position: fixed;
   display: flex;
   bottom: 180px;
 }
-/* .btn-send-order{
-  
-} */

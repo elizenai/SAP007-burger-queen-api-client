@@ -105,9 +105,13 @@ export const Saloon = () => {
             className="btn-products"
             onClick={handleShowMenu}
           >Almoço e Jantar</Button>
+
+          <Button
+            value="ready-order"
+            className="btn-products"
+          >Pedidos Prontos</Button>
         </div>
 
-          
         <ul className="all-products">
           {products.map((item) => {
             return (
@@ -136,7 +140,7 @@ export const Saloon = () => {
               <li>
                 <Input  
                   className= "client-name"
-                  placeholder= "nome do cliente"
+                  placeholder= "Nome do Cliente"
                   value={nameClient}
                   onChange={(e) => setNameClient(e.target.value)}
                   />

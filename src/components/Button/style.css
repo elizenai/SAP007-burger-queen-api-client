@@ -16,3 +16,39 @@
     font-size: 15px;
     border: 0;
 }
+
+.btn-products {
+  border-radius: 8px;
+  border-bottom: 3px solid #ffc107;
+  font-size: 15px;
+  height: 35px;
+  width: 210px;
+  cursor: pointer;
+  text-decoration: black,
+}
+
+.btn-add-product, .btn-send-order {
+  border-radius: 6px;
+  width: 100px;
+  height: 30px;
+  background-color: #FFBC0D;
+  font-size: 17px;
+  border: 0px;
+  cursor: pointer;
+}
+
+.btn-send-order{
+  width: 130px;
+  height: 40px;
+  cursor: pointer;
+}
+
+
+.btn-exit{
+  width: 50px;
+  height: 50px;
+  color: #FFBC0D;
+  cursor: pointer;
+  font-size: 2em;
+  background-color: black;
+}
