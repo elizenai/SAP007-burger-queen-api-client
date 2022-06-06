@@ -44,11 +44,26 @@
 }
 
 
-.btn-exit{
+.btn-exit {
   width: 50px;
   height: 50px;
   color: #FFBC0D;
   cursor: pointer;
   font-size: 2em;
   background-color: black;
+}
+
+.btn-remove, .btn-add {
+  cursor: pointer;
+  font-size: 2em;
+  background-color: #333;
+  border: #333;
+}
+
+.btn-remove{
+  color:rgb(232, 43, 30)
+}
+
+.btn-add{
+  color: rgb(85, 231, 85);
 }

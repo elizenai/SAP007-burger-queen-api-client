@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import { removeToken } from "../../services/token";
 import { Header } from "../../components/Header";
 import { filterProducts } from "../../services/filter";
+import { MdRemoveCircle } from "react-icons/md";
+import { MdAddCircle } from "react-icons/md";
 
 
 export const Saloon = () => {
@@ -172,10 +174,15 @@ export const Saloon = () => {
                     complement={item.complement}
                     price={item.price * item.qtd}
                   />
+                  <Button
+                    className="btn-add"
+                    onClick={() => handleAddOrders(item)}>
+                    <MdAddCircle />
+                  </Button>
                   <Button 
                     className="btn-remove"
                     onClick={() => handleRemoveOrders(item)}>
-                    remover
+                    <MdRemoveCircle/>
                   </Button>
                 </li>
               );
