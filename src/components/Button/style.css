@@ -50,13 +50,14 @@
   color: #FFBC0D;
   cursor: pointer;
   font-size: 2em;
-  background-color: black;
+  background-color: transparent;
+  border: none;
 }
 
 .btn-remove, .btn-add {
   cursor: pointer;
   font-size: 2em;
-  background-color: #333;
+  background-color: transparent;
   border: #333;
 }
 

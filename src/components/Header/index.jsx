@@ -1,13 +1,17 @@
-import { Button } from "../Button";
 import { FiLogOut } from "react-icons/fi";
+import image from "../../img/logo-hamburger.png";
+import "./style.css";
 
 export const Header = ({onClick}) => {
   
   return (
     <header className="header-all">
-      <Button className="btn-exit"  onClick= {onClick}>
+      <figure className="image-header">
+        <img className="image-logo"src={image} alt="logo" />
+      </figure>
+      <button className="btn-exit"  onClick= {onClick}>
         <FiLogOut/>
-      </Button>
+      </button>
     </header>
 
   );

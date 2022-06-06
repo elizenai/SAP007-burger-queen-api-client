@@ -1,8 +1,14 @@
-.text-input {
+.text-input, .client-name {
   border-radius: 8px;
   border-bottom: 3px solid #ffc107;
   font-size: 15px;
   color: black;
   height: 35px;
   width: 260px;
+}
+
+.client-name {
+  font-size: 15px;
+  height: 35px;
+  width: 150px;
 }
