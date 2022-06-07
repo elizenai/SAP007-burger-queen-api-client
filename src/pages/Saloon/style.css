@@ -81,10 +81,11 @@ li{
 
 .select-table {
   margin-left: 10px;
-  height: 35px;
+  height: 25px;
   width: 100px;
   border-bottom: 3px solid #ffc107;
-  border-radius: 8px;
+  border-radius: 30px;
+  text-align: center;
 }
 
 .item-command {
