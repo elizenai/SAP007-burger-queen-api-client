@@ -1,11 +1,9 @@
-export const Select = ({className, name, onChange, optionValues}) => {
+export const Select = ({optionValues, ...rest}) => {
   return (
     <>
       <select
-        className={className}
-        name={name}
-        onChange={onChange}
         defaultValue={optionValues[0].id}
+        {...rest}
       > 
         {/* <option disabled>Selecione</option>    */}
         {optionValues.map((option,key) => {

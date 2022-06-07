@@ -19,7 +19,7 @@ export const Saloon = () => {
   const [orderProducts, setOrderProducts] = useState([]);
   const [chooseTable, setChooseTable] = useState("");
   const [nameClient, setNameClient] = useState("");
-  const [saveOrder, setSaveOrder] = useState([]);
+  // const [saveOrder, setSaveOrder] = useState([]);
   const [sumOrders, setSumOrders] = useState(0);
   const navigate = useNavigate();
 
@@ -66,12 +66,16 @@ export const Saloon = () => {
 
   const handleSubmitOrder = () => {
     createOrder(nameClient, chooseTable, orderProducts)
-      .then((response) => response.json())
-      .then((data) => {
-        setSaveOrder(data);
-        console.log(data, "Pedido");
+      .then((response) => {
+        if (response.status === 200) {
+          setNameClient("");
+          setChooseTable("");
+          setOrderProducts([]);
+        } else {
+        console.log("Deu ruim");
+        }
+        
       });
-    console.log([saveOrder], "PEdidooo");
   };
 
   useEffect(() => {
