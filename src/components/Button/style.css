@@ -19,12 +19,14 @@
 
 .btn-products {
   border-radius: 8px;
-  border-bottom: 3px solid #ffc107;
+  border: 2px solid #ffc107;
   font-size: 15px;
   height: 35px;
   width: 210px;
   cursor: pointer;
-  text-decoration: black,
+  color: white;
+  background: #333;
+
 }
 
 .btn-add-product, .btn-send-order {
@@ -39,10 +41,9 @@
 
 .btn-send-order{
   width: 130px;
-  height: 40px;
+  height: 30px;
   cursor: pointer;
 }
-
 
 .btn-exit {
   width: 50px;

@@ -9,6 +9,8 @@
 
 .client-name {
   font-size: 15px;
-  height: 35px;
+  height: 25px;
   width: 150px;
+  border-radius: 30px;
+  text-align: center;
 }
