@@ -30,19 +30,18 @@ export const userLogin = (email, password) => {
   });
 };
 
-const token = getToken();
 
 export const getMenu = () => {
   return fetch("https://lab-api-bq.herokuapp.com/products",{
     method:"GET",
-    headers:{ "Content-Type": "application/json", Authorization: token},
+    headers:{ "Content-Type": "application/json", Authorization: getToken()},
   });
 };
 
 export const createOrder = (client, table, products) => {
   return fetch("https://lab-api-bq.herokuapp.com/orders",{
     method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: token },
+    headers: { "Content-Type": "application/json", Authorization: getToken() },
     body: JSON.stringify({
     client: client,
     table: table,
