@@ -3,6 +3,9 @@
 // import { Header } from "../../components/Header";
 // import { ProductCard } from "../../components/ProductCard";
 
-export const Kitchen = () => {
-  return (<p>Oi, Kitchen!</p>);
-};
+// export const Kitchen = () => {
+// const [order, setOrder] = useState([]);
+
+//   return (
+//   );
+// };
