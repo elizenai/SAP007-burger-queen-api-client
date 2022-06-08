@@ -49,3 +49,13 @@ export const createOrder = (client, table, products) => {
     })
   });
 };
+
+export const orderStatus = (orderId, status) => {
+  return fetch(`https://lab-api-bq.herokuapp.com/orders/${orderId}`,{
+    method: "PUT",
+    headers: {"Content-Type": "application/json", Authorization: getToken()},
+    body: JSON.stringify({
+status: status,
+    })
+  });
+};
