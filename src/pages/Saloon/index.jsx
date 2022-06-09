@@ -19,7 +19,6 @@ export const Saloon = () => {
   const [orderProducts, setOrderProducts] = useState([]);
   const [chooseTable, setChooseTable] = useState("");
   const [nameClient, setNameClient] = useState("");
-  // const [saveOrder, setSaveOrder] = useState([]);
   const [sumOrders, setSumOrders] = useState(0);
   const navigate = useNavigate();
 
@@ -83,7 +82,7 @@ export const Saloon = () => {
   }, []);
 
   useEffect(() => {
-    console.log(orderProducts, "ORDER PRODUCT");
+    (orderProducts, "ORDER PRODUCT");
   }, [orderProducts]);
 
   useEffect(() => {
@@ -129,7 +128,7 @@ export const Saloon = () => {
                     complement={item.complement}
                     price={item.price}
                     onClick={() => handleAddOrders(item)}
-                  ></ProductCard>
+                  />
 
                 );
               })}
