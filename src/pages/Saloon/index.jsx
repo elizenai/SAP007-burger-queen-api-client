@@ -82,10 +82,6 @@ export const Saloon = () => {
   }, []);
 
   useEffect(() => {
-    (orderProducts, "ORDER PRODUCT");
-  }, [orderProducts]);
-
-  useEffect(() => {
     const amount = orderProducts.reduce((previousPrice, item) => {
       return previousPrice + item.qtd * item.price;
     }, 0);

@@ -4,18 +4,20 @@ export const OrdersKitchen = ({client, table, products, createdAt, updateAt, sta
   return (
   
     <li className="order-list">
-      <p>Cliente: {client}</p>
-      <p>Mesa: {table}</p>
-      <p>Criação do pedido: {createdAt}</p>
-      <p>Status dos pedido: {status}</p>
-      <p>Última atualização: {updateAt}</p>
-      <ul>Produtos: {products.map((product) => {
+      <div className="container-details-order">
+        <p className="details-order">Cliente: {client}</p>
+        <p className="details-order">Mesa: {table}</p>
+        <p className="details-order"> Criação do pedido: {createdAt}</p>
+        <p className="details-order">Status dos pedido: {status}</p>
+        <p className="details-order">Última atualização: {updateAt}</p>
+      </div>
+      <ul className="style-products">Produtos: {products.map((product) => {
         return (
           <div key={product.id}>
-            <p>{product.name}</p>
+            <p>{product.qtd} <span>{product.name}</span></p>
             <p>{product.flavor}</p>
             <p>{product.complement}</p>
-            <p>{product.qtd}</p>
+            
           </div>
         );
         })}

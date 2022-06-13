@@ -1,0 +1,8 @@
+.cards-order{
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  gap: 10px;
+  justify-content: space-between;
+}

@@ -6,7 +6,6 @@
   width: 170px;
   height: 240px;
   background-color: white;
-  display: flex;
   text-align: center;
   align-items: center;
 
@@ -16,11 +15,4 @@
   border-radius: 10px 10px 0px 0px;
   height: 170px;
   width: 170px;
-}
-.product-name{
-
-
-}
-.product-price{
-
 }
