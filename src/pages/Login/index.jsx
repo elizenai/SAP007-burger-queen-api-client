@@ -31,7 +31,7 @@ export const Login = () => {
         setToken(data.token);
         navigate(data.role === "saloon" ? "/saloon" : "/kitchen");
       })
-      .catch((error) => console.log(error));
+      .catch(() => setErro(statusError({status: 500})));
   };
 
   return (

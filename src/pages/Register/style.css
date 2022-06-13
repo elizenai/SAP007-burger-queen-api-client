@@ -1,12 +1,9 @@
 .text-label-register{
-
   font-weight: 400;
   font-size: 15px;
   line-height: 19px;
   padding: 0.5rem 0;
-  color: #e8e7dc;
-  
-  
+  color: #e8e7dc; 
 }
 
 .text-input-register{
@@ -17,8 +14,8 @@
   color: black;
   height: 30px;
   width: 260px;
-
 }
+
 .label-password-register{
   font-weight: 400;
   font-size: 15px;
@@ -31,8 +28,7 @@
 
 .container-input-select{
   display: flex;
-  flex-direction: row;
-  
+  flex-direction: row; 
 }
 
 .input-password-register{
@@ -40,8 +36,8 @@
   border-bottom: 3px solid #ffc107;
   color: black; 
   width: 150px;
-  
 }
+
 .select-style{
   margin-left: 10px;
   height: 35px;
