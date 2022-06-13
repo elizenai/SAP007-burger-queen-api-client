@@ -6,6 +6,8 @@ import { removeToken } from "../../services/token";
 import { OrdersKitchen } from "../../components/OrdersKitchen";
 import { getProducts } from "../../services/api";
 import { convertTime } from "../../services/formatTime";
+import "./style.css";
+
 
 
 export const Kitchen = () => {
@@ -30,8 +32,8 @@ export const Kitchen = () => {
   <>
     <Header onClick={handleLogout}/>
     <section className="container-kitchen">
-      <div className="container-products">
-        <ul>
+      <div className="container-products-kitchen">
+        <ul className="cards-order">
           {order.map((item) => {
             
             return (
