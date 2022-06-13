@@ -1,6 +1,6 @@
 import "./style.css";
 
-export const OrdersKitchen = ({client, table, products, createdAt, updateAt, status}) => {
+export const OrdersKitchen = ({client, table, products, createdAt, updatedAt, status}) => {
   return (
   
     <li className="order-list">
@@ -8,7 +8,7 @@ export const OrdersKitchen = ({client, table, products, createdAt, updateAt, sta
       <p>Mesa: {table}</p>
       <p>Criação do pedido: {createdAt}</p>
       <p>Status dos pedido: {status}</p>
-      <p>Última atualização: {updateAt}</p>
+      <p>Última atualização: {updatedAt}</p>
       <ul>Produtos: {products.map((product) => {
         return (
           <div key={product.id}>

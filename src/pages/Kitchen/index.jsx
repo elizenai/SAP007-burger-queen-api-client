@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { removeToken } from "../../services/token";
 import { OrdersKitchen } from "../../components/OrdersKitchen";
 import { getProducts } from "../../services/api";
+import { convertTime } from "../../services/formatTime";
 
 
 export const Kitchen = () => {
@@ -38,8 +39,8 @@ export const Kitchen = () => {
                 key={item.id}
                 client={item.client_name}
                 table={item.table}
-                createdAt={item.createdAt}
-                updateAt={item.updateAt}
+                createdAt={convertTime(item.createdAt)}
+                updatedAt={convertTime(item.updatedAt)}
                 status={item.status}
 
                 products={item.Products}
