@@ -3,9 +3,15 @@
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.container-order-kitchen{
+  display: flex;
+}
+
 .order-list{
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   color: black;
   background: white;
   border-radius: 15px;
@@ -29,7 +35,7 @@
 }
 .style-products{
   overflow:auto;
-  height: 120px;
+  height: 150px;
   width: 400px;
   display: grid;
   justify-content: space-around;
