@@ -10,25 +10,18 @@
   background: white;
   border-radius: 15px;
   border: solid #FFBC0D;
-  height: 120px;
+  height: 140px;
   width: 600px;
-
+  padding-top: 6px;
 }
 
 .container-details-order{
   display: grid;
-  /* justify-content: start; */
   align-content: center;
   justify-items: start;
- 
-  
 }
-/* 
-.details-order{
-
-} */
 .style-products{
-  overflow: auto;
+  overflow:auto;
   height: 120px;
   width: 300px;
 }

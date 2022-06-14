@@ -136,7 +136,7 @@ export const Saloon = () => {
           <div className="products-command">
             <h2 className="order-command">Pedido:
             </h2>
-            <div>
+            <div className="client-table">
               <Input
                 className="client-name"
                 placeholder="Nome do Cliente"
