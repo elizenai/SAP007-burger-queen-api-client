@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import { orderStatus  } from "../../services/api"; 
+import { orderStatus } from "../../services/api"; 
 import { Header } from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { removeToken } from "../../services/token";
@@ -28,6 +28,18 @@ export const Kitchen = () => {
     });
   }, []);
 
+  const handleStatusFinish = (item) => {
+    orderStatus(item.id,"finish")
+    .then((response) => {
+      let newOrder = order;
+      if(response.status === 200) {
+      newOrder = order.filter((element) => 
+      element.id !== item.id);
+      }
+      setOrder(newOrder);
+    });
+  };
+
   return (
   <>
     <Header onClick={handleLogout}/>
@@ -44,8 +56,8 @@ export const Kitchen = () => {
                 createdAt={convertTime(item.createdAt)}
                 updatedAt={convertTime(item.updatedAt)}
                 status={item.status}
-
                 products={item.Products}
+                onClick={() => handleStatusFinish(item)}
               />
             );
             
