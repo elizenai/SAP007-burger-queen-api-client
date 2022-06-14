@@ -69,3 +69,7 @@
 .btn-add{
   color: rgb(85, 231, 85);
 }
+
+.btn-finish{
+  border-radius: 5px;
+}
