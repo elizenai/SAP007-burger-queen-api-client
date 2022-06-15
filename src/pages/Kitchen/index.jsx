@@ -23,8 +23,11 @@ export const Kitchen = () => {
     getProducts()
     .then((response) => response.json())
     .then((data) => {
-      setOrder(data);
-      
+      const filterData = data.filter((item) => {
+        return item.status == "pending";
+      });
+      setOrder(filterData);
+      console.log(filterData, "filteeer");
     });
   }, []);
 
