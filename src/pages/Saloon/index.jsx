@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ProductCard } from "../../components/ProductCard";
-import { createOrder, getMenu } from "../../services/api";
+import { createOrder, getMenu, getProducts } from "../../services/api";
 import { Button } from "../../components/Button";
 import "./style.css";
 import { Input } from "../../components/Input";
@@ -12,6 +12,7 @@ import { Header } from "../../components/Header";
 import { filterProducts } from "../../services/filter";
 import { MdRemoveCircle } from "react-icons/md";
 import { MdAddCircle } from "react-icons/md";
+// import { OrdersKitchen } from "../../components/OrdersKitchen";
 
 
 export const Saloon = () => {
@@ -36,6 +37,19 @@ export const Saloon = () => {
   const handleShowMenu = (e) => {
     showMenu(e.target.value);
   };
+
+  const handleFinishedOrder = () => {
+    getProducts()
+    .then((response) => response.json())
+    .then((data) => {
+      const filterData = data.filter((item) => {
+        return item.status == "finish";
+      });
+      setOrderProducts(filterData);
+      console.log(filterData, "filteeer");
+    });
+  };
+      
 
   const handleAddOrders = (item) => {
     const verifyIdProduct = orderProducts.find((itemOrder) => itemOrder.id === item.id);
@@ -109,8 +123,27 @@ export const Saloon = () => {
             <Button
               value="ready-order"
               className="btn-products"
+              onClick={handleFinishedOrder}
             >Pedidos Prontos</Button>
           </div>
+          {/* (? <ul className="cards-order">
+          {orderProducts.map((item) => {
+            
+            return (
+              <OrdersKitchen 
+                key={item.id}
+                client={item.client_name}
+                table={item.table}
+                createdAt={convertTime(item.createdAt)}
+                updatedAt={convertTime(item.updatedAt)}
+                status={item.status}
+                products={item.Products}
+                onClick={() => handleStatusFinish(item)}
+              />
+            );
+            
+          })}
+        </ul>:) */}
           <div className="menu-products">
             <ul className="all-products">
               {products.map((item) => {
@@ -134,8 +167,7 @@ export const Saloon = () => {
 
         <aside className="order">
           <div className="products-command">
-            <h2 className="order-command">Pedido:
-            </h2>
+            <h2 className="order-command">Pedido:</h2>
             <div className="client-table">
               <Input
                 className="client-name"
