@@ -37,6 +37,7 @@ export const Saloon = () => {
     showMenu(e.target.value);
   };
 
+   
   const handleAddOrders = (item) => {
     const verifyIdProduct = orderProducts.find((itemOrder) => itemOrder.id === item.id);
     let newOrderProducts = [...orderProducts];
@@ -77,6 +78,10 @@ export const Saloon = () => {
       });
   };
 
+  const handleReadyOrders = () => {
+    navigate("/ready-orders");
+  };
+
   useEffect(() => {
     showMenu("breakfast");
   }, []);
@@ -109,6 +114,7 @@ export const Saloon = () => {
             <Button
               value="ready-order"
               className="btn-products"
+              onClick={handleReadyOrders}
             >Pedidos Prontos</Button>
           </div>
           <div className="menu-products">
@@ -134,8 +140,7 @@ export const Saloon = () => {
 
         <aside className="order">
           <div className="products-command">
-            <h2 className="order-command">Pedido:
-            </h2>
+            <h2 className="order-command">Pedido:</h2>
             <div className="client-table">
               <Input
                 className="client-name"

@@ -3,6 +3,7 @@ import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import { Saloon } from "./pages/Saloon";
 import { Kitchen } from "./pages/Kitchen";
+import { ReadyOrders } from "./pages/ReadyOrders";
 
 const PrivateRoute = ({ children, redirectTo}) => {
     const isAuthenticated = localStorage.getItem("token") !== null;
@@ -18,8 +19,9 @@ export const RoutesBurger = () => {
             <Route path="/saloon" element={<PrivateRoute redirectTo="/">
                 <Saloon /></PrivateRoute>}/>
             <Route path="/kitchen" element={<PrivateRoute redirectTo="/">
-                <Kitchen /></PrivateRoute>}/> 
-            
+                <Kitchen /></PrivateRoute>}/>
+            <Route path="/ready-orders" element={<PrivateRoute redirectTo="/">
+                <ReadyOrders /></PrivateRoute>}/>
         </Routes>
     </BrowserRouter>    
 
