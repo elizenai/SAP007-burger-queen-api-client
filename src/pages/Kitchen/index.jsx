@@ -7,6 +7,7 @@ import { OrdersKitchen } from "../../components/OrdersKitchen";
 import { getProducts } from "../../services/api";
 import { convertTime } from "../../services/formatTime";
 import "./style.css";
+import { Button } from "../../components/Button";
 
 
 
@@ -52,16 +53,20 @@ export const Kitchen = () => {
           {order.map((item) => {
             
             return (
-              <OrdersKitchen 
-                key={item.id}
-                client={item.client_name}
-                table={item.table}
-                createdAt={convertTime(item.createdAt)}
-                updatedAt={convertTime(item.updatedAt)}
-                status={item.status}
-                products={item.Products}
-                onClick={() => handleStatusFinish(item)}
-              />
+              <>
+                <OrdersKitchen 
+                  key={item.id}
+                  client={item.client_name}
+                  table={item.table}
+                  createdAt={convertTime(item.createdAt)}
+                  updatedAt={convertTime(item.updatedAt)}
+                  status={item.status}
+                  products={item.Products}
+                >
+                  <Button className="btn-finish" value="finish" onClick={() => handleStatusFinish(item)}> 
+                  Finalizar</Button>
+                </OrdersKitchen>
+              </>
             );
             
           })}

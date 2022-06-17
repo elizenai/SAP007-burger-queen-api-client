@@ -1,7 +1,6 @@
-import { Button } from "../Button";
 import "./style.css";
 
-export const OrdersKitchen = ({client, table, products, createdAt, updatedAt, status, onClick}) => {
+export const OrdersKitchen = ({client, table, products, createdAt, updatedAt, status, children}) => {
   return (
   
     <li className="order-list">
@@ -27,7 +26,7 @@ export const OrdersKitchen = ({client, table, products, createdAt, updatedAt, st
           })}
         </ul>
       </div>
-      <Button className="btn-finish" value="finish" onClick={onClick}> Finalizar</Button>
+      {children}
     </li> 
   );
 };
