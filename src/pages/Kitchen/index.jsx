@@ -63,8 +63,10 @@ export const Kitchen = () => {
                   status={item.status}
                   products={item.Products}
                 >
-                  <Button className="btn-finish" value="finish" onClick={() => handleStatusFinish(item)}> 
-                  Finalizar</Button>
+                  <div className="btn-finish-serve">
+                    <Button className="btn-finish" value="finish" onClick={() => handleStatusFinish(item)}> 
+                    Finalizar</Button>
+                  </div>
                 </OrdersKitchen>
               </>
             );
