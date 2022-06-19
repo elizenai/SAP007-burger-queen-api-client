@@ -5,6 +5,8 @@ import { orderStatus } from "../../services/api";
 import { useState, useEffect } from "react";
 import { convertTime } from "../../services/formatTime";
 import { Button } from "../../components/Button";
+import "./style.css";
+import { FiCornerUpLeft } from "react-icons/fi";
 
 export const ReadyOrders = () => {
   const [order, setOrder] = useState([]);
@@ -40,7 +42,9 @@ export const ReadyOrders = () => {
 
   return (
     <>
-    <Button onClick={handleReturn}>Voltar </Button>
+    <Button className= "btn-return" onClick={handleReturn}>
+      <FiCornerUpLeft/>
+    </Button>
       <section className="container-ready-orders">
         <div className="ready-orders">
           <ul className="cards-ready-orders">
@@ -57,8 +61,10 @@ export const ReadyOrders = () => {
                     status={item.status}
                     products={item.Products}
                   >
-                    <Button className="btn-finish" value="finish" onClick={() => handleServeOrder(item)}> 
-                    Servir</Button>
+                    <div className="btn-finish-serve">
+                      <Button className="btn-serve" value="serve" onClick={() => handleServeOrder(item)}> 
+                      Servir</Button>
+                    </div>
                   </OrdersKitchen>
                 </>
               );
