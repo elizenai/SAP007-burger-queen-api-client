@@ -13,7 +13,7 @@ export const OrdersKitchen = ({client, table, products, createdAt, updatedAt, st
           <p className="details-order"><span className="details-order-span">Última atualização:</span> {updatedAt}</p>
         </div>
       
-        <ul className="style-products">Produtos: {products.map((product) => {
+        <ul className="style-products"> <span className="text-products-span">Produtos:</span> {products.map((product) => {
 
           return (
             <div key={product.id}>

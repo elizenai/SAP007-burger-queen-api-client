@@ -25,14 +25,15 @@
   display: grid;
   align-content: center;
   justify-items: start;
-  width: 300px;
-  height: 150px;
+  width: 50%;
+  height: 50%;
   padding-left: 10px;
 }
 
-.details-order-span{
+.details-order-span, .text-products-span{
   font-weight: bold;
 }
+
 .style-products{
   overflow:auto;
   height: 150px;
