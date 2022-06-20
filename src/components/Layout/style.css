@@ -19,8 +19,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 15px;
-    background: url("../../img/background.png");
   }
   
   .wrap-login {

@@ -3,7 +3,13 @@
   justify-content: center;
   text-align: center;
   color: white;
-  margin-top: 5px;
+  margin-bottom: 5px;
   font-size: 18px;
-  background-color: aliceblue;
+  text-decoration: none;
+  height: 3vh;
+}
+
+a{
+  color: white;
+  text-decoration: none;
 }
