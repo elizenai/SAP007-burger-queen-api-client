@@ -17,7 +17,7 @@
 
 Star Burger é uma hamburgueria que está crescendo e lançou o serviço de 24 horas. Para facilitar o dia a dia dos funcionários, desenvolvemos uma aplicação que você pode conferir [AQUI](https://starburger.netlify.app/). 
 
-<img src="public\burger.gif">
+<img src="src\img\burger.gif">
 
 ## 2. Histórias de Usuários
 
@@ -54,7 +54,7 @@ rapidamente aos clientes.
 
 Para entregar o MVP do projeto, organizamos o desenvolvimento da aplicação pelo método [Kanban](https://pt.wikipedia.org/wiki/Kanban), no Trello. Para cada história de usuários, separamos cards com as tarefas a serem realizadas à medida que avançávamos nas Sprints.
 
-<img src="public/trello.png">
+<img src="src\img\trello.png">
 
 <br>
 
@@ -62,10 +62,10 @@ Para entregar o MVP do projeto, organizamos o desenvolvimento da aplicação pel
 
 O protótipo de alta fidelidade foi desenvolvido por meio de um editor gráfico de vetor e prototipagem de projetos, o Figma. 
 
-<img src="public/login.png">
-<img src="public/cadastro.png">
-<img src="public\saloon.png">
-<img src="public\kitchen.png">
+<img src="src\img\login.png" width="80%">
+<img src="src\img\cadastro.png" width="80%">
+<img src="src\img\saloon.png" width="80%">
+<img src="src\img\kitchen.png" width="80%">
 
 ## 4. Considerações Gerais
 
@@ -78,11 +78,20 @@ Este projeto foi desenvolvido durante o Bootcamp da Laboratória, turma SAP 007,
 
 - [Elizenai Silva](https://www.linkedin.com/in/elizenai/)
 
-<img src="public\foto_Eli.jpg">
+<img src="src\img\foto-Eli.jpg" width="50%">
 
 
 - [Gabriela Medrado](https://www.linkedin.com/in/gabrielamedrado/)
 
-<img src="public\foto_Gabi.jpg">
+<img src="src\img\foto-Gabi.jpg" width="50%">
+<br>
+<br>
+<br>
 
 <p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
+
+<br>
+
+Muito obrigada e nos vemos por aí. Que a força esteja com você!
+
+<img src="src\img\luke.gif">
