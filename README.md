@@ -62,10 +62,10 @@ Para entregar o MVP do projeto, organizamos o desenvolvimento da aplicação pel
 
 O protótipo de alta fidelidade foi desenvolvido por meio de um editor gráfico de vetor e prototipagem de projetos, o Figma. 
 
-<img src="src\img\login.png">
-<img src="src\img\cadastro.png">
-<img src="src\img\saloon.png">
-<img src="src\img\kitchen.png">
+<img src="src\img\login.png" width="80%">
+<img src="src\img\cadastro.png" width="80%">
+<img src="src\img\saloon.png" width="80%">
+<img src="src\img\kitchen.png" width="80%">
 
 ## 4. Considerações Gerais
 
@@ -78,12 +78,12 @@ Este projeto foi desenvolvido durante o Bootcamp da Laboratória, turma SAP 007,
 
 - [Elizenai Silva](https://www.linkedin.com/in/elizenai/)
 
-<img src="src\img\foto-Eli.jpg">
+<img src="src\img\foto-Eli.jpg" width="50%">
 
 
 - [Gabriela Medrado](https://www.linkedin.com/in/gabrielamedrado/)
 
-<img src="src\img\foto-Gabi.jpg">
+<img src="src\img\foto-Gabi.jpg" width="50%">
 <br>
 <br>
 <br>
