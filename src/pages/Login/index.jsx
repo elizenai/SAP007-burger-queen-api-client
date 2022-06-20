@@ -11,6 +11,7 @@ import { setToken } from "../../services/token";
 import { ErrorMessage } from "../../components/ErrorMessage";
 import { useNavigate, Link } from "react-router-dom";
 
+
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -66,7 +67,6 @@ export const Login = () => {
               Não possui cadastro? <Link className="text-link" to="/register"> Clique aqui</Link>
             </p>
           </form>
-          
         </div>
       </section>
     </Layout>

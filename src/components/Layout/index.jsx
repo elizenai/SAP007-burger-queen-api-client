@@ -1,3 +1,4 @@
+import { Footer } from "../Footer";
 import "./style.css";
 
 export const Layout = ({children}) => {
@@ -8,6 +9,7 @@ export const Layout = ({children}) => {
                     {children}
                     </div>
                 </div>
+                <Footer/>
             </section>
     );
 };
