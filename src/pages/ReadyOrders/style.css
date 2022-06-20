@@ -1,8 +1,13 @@
-.cards-order{
+.cards-ready-orders{
   display: flex;
   flex-wrap: wrap;
   width: 80%;
   margin: 0 auto;
   gap: 60px;
   justify-content: space-between;
+}
+
+.btn-finish-serve{
+  display: flex;
+  justify-content: center;
 }

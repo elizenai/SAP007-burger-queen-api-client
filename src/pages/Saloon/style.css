@@ -58,25 +58,9 @@ body{
   padding: 10px;
 }
 
-.command-itens{
-  color: white;
-  padding: 10px;
-  text-align: left; 
-}
+.client-table{
+  padding-left: 10px;
 
-li{
-  list-style-type: none;
-}
-
-.total-order{
-  color: white;
-}
-
-.order-completion{
-  /* position: fixed;
-  bottom: 15px; */
-  display: flex;
-  flex-direction: column;
 }
 
 .select-table {
@@ -88,7 +72,32 @@ li{
   text-align: center;
 }
 
+.command-itens{
+  color: white;
+  padding: 10px;
+  text-align: left; 
+}
 .item-command {
   overflow: auto;
   height: 60%;
 }
+
+li{
+  list-style-type: none;
+}
+
+.total-order{
+  color: white;
+  padding-bottom: 10px;
+}
+
+.order-completion{
+  position: fixed;
+  bottom: 120px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
