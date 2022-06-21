@@ -8,6 +8,7 @@ import { getProducts } from "../../services/api";
 import { convertTime } from "../../services/formatTime";
 import "./style.css";
 import { Button } from "../../components/Button";
+import { sortOrder } from "../../services/sortOrder";
 
 
 
@@ -24,10 +25,12 @@ export const Kitchen = () => {
     getProducts()
     .then((response) => response.json())
     .then((data) => {
-      const filterData = data.filter((item) => {
+      const sortOrderKitchen = sortOrder(data);
+      const filterData = sortOrderKitchen.filter((item) => {
         return item.status == "pending";
       });
       setOrder(filterData);
+      sortOrderKitchen;
     });
   }, []);
 
