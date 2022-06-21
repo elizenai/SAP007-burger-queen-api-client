@@ -24,7 +24,6 @@ export const ReadyOrders = () => {
           return item.status == "finish";
         });
         setOrder(filterData);
-        console.log(filterData, "finisheedd");
       });
   }, []);
 
