@@ -43,10 +43,8 @@ export const Saloon = () => {
     let newOrderProducts = [...orderProducts];
     if (verifyIdProduct) {
       verifyIdProduct.qtd++;
-      console.log(newOrderProducts, "estou no if");
     } else {
       const product = { ...item, qtd: 1 };
-      console.log("entrei no else");
       newOrderProducts.push(product);
     }
     setOrderProducts(newOrderProducts);

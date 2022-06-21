@@ -28,7 +28,6 @@ export const Kitchen = () => {
         return item.status == "pending";
       });
       setOrder(filterData);
-      console.log(filterData, "filteeer");
     });
   }, []);
 
