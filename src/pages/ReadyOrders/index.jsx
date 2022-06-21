@@ -7,6 +7,7 @@ import { convertTime } from "../../services/formatTime";
 import { Button } from "../../components/Button";
 import "./style.css";
 import { FiCornerUpLeft } from "react-icons/fi";
+import { sortOrder } from "../../services/sortOrder";
 
 export const ReadyOrders = () => {
   const [order, setOrder] = useState([]);
@@ -20,10 +21,12 @@ export const ReadyOrders = () => {
     getProducts()
       .then((response) => response.json())
       .then((data) => {
-        const filterData = data.filter((item) => {
+        const sortOrderKitchen = sortOrder(data);
+        const filterData = sortOrderKitchen.filter((item) => {
           return item.status == "finish";
         });
         setOrder(filterData);
+        sortOrderKitchen;
       });
   }, []);
 
